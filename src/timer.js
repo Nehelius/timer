@@ -34,6 +34,7 @@ const TimerStyle = styled.div`
 			border: 0;
 			border-radius: 5px;
 			margin: 0 auto;
+			padding: 0;
 			text-align: center;
 			background-color: sienna;
 			color: white;
@@ -47,13 +48,13 @@ const TimerStyle = styled.div`
 			width: 100%;
 			height: 37vh;
 			position: absolute;
-			bottom: 0;
+			top: 0;
 			left: 0;
-			-ms-transform: translateY(-10%);
-			-webkit-transform: translateY(-10%);
-			-moz-transform: translateY(-10%);
-			-o-transform: translateY(-10%);
-			transform: translateY(-10%);
+			-ms-transform: translateY(-4%);
+			-webkit-transform: translateY(-4%);
+			-moz-transform: translateY(-4%);
+			-o-transform: translateY(-4%);
+			transform: translateY(-4%);
 		}
 
 		> .white-button {
@@ -62,13 +63,13 @@ const TimerStyle = styled.div`
 			width: 100%;
 			height: 37vh;
 			position: absolute;
-			top: 0;
+			bottom: 0;
 			left: 0;
-			-ms-transform: translateY(11%);
-			-webkit-transform: translateY(11%);
-			-moz-transform: translateY(11%);
-			-o-transform: translateY(11%);
-			transform: translateY(11%);
+			-ms-transform: translateY(4%);
+			-webkit-transform: translateY(4%);
+			-moz-transform: translateY(4%);
+			-o-transform: translateY(4%);
+			transform: translateY(4%);
 		}
 
 		> .black-half {
