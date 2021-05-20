@@ -13,6 +13,10 @@ const TimerStyle = styled.div`
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
 		margin: 0 auto;
 		background-color: sienna;
 
@@ -22,6 +26,10 @@ const TimerStyle = styled.div`
 			top: 50%;
 			left: 50%;
 			transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+			-webkit-transform: translateX(-50%);
+			-moz-transform: translateX(-50%);
+			-o-transform: translateX(-50%);
 
 			> .start-stop {
 				width: 4em;
@@ -30,6 +38,10 @@ const TimerStyle = styled.div`
 				bottom: 50%;
 				left: 50%;
 				transform: translate(-50%, 50%);
+				-ms-transform: translate(-50%, 50%);
+				-webkit-transform: translate(-50%, 50%);
+				-moz-transform: translate(-50%, 50%);
+				-o-transform: translate(-50%, 50%);
 				border: 0;
 				border-radius: 5px;
 				background-color: sienna;
@@ -42,22 +54,30 @@ const TimerStyle = styled.div`
 				background-color: transparent;
 				border: 0;
 				width: 100%;
-				height: 42vh;
+				height: 37vh;
 				position: absolute;
 				bottom: 0;
 				left: 0;
-				transform: translateY(-7%);
+				transform: translateY(-10%);
+				-ms-transform: translateY(-10%);
+				-webkit-transform: translateY(-10%);
+				-moz-transform: translateY(-10%);
+				-o-transform: translateY(-10%);
 			}
 
 			> .white-button {
 				background-color: transparent;
 				border: 0;
 				width: 100%;
-				height: 42vh;
+				height: 37vh;
 				position: absolute;
 				top: 0;
 				left: 0;
-				transform: translateY(15%);
+				transform: translateY(11%);
+				-ms-transform: translateY(11%);
+				-webkit-transform: translateY(11%);
+				-moz-transform: translateY(11%);
+				-o-transform: translateY(11%);
 			}
 		}
 
@@ -75,6 +95,10 @@ const TimerStyle = styled.div`
 				top: 10%;
 				left: 50%;
 				transform: translateX(-50%) rotate(180deg);
+				-ms-transform: translateX(-50%) rotate(180deg);
+				-webkit-transform: translateX(-50%) rotate(180deg);
+				-moz-transform: translateX(-50%) rotate(180deg);
+				-o-transform: translateX(-50%) rotate(180deg);
 				font-size: 3em;
 				text-align: center;
 				line-height: 2em;
@@ -101,6 +125,11 @@ const TimerStyle = styled.div`
 				bottom: 10%;
 				left: 50%;
 				transform: translateX(-50%);
+				-ms-transform: translateX(-50%);
+				-webkit-transform: translateX(-50%);
+				-moz-transform: translateX(-50%);
+				-o-transform: translateX(-50%);
+
 				font-size: 3em;
 				text-align: center;
 				line-height: 2em;
