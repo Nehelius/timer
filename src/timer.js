@@ -12,11 +12,11 @@ const TimerStyle = styled.div`
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
 		-ms-transform: translate(-50%, -50%);
 		-webkit-transform: translate(-50%, -50%);
 		-moz-transform: translate(-50%, -50%);
 		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
 		margin: 0 auto;
 		background-color: sienna;
 
@@ -25,11 +25,11 @@ const TimerStyle = styled.div`
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translateX(-50%);
 			-ms-transform: translateX(-50%);
 			-webkit-transform: translateX(-50%);
 			-moz-transform: translateX(-50%);
 			-o-transform: translateX(-50%);
+			transform: translateX(-50%);
 
 			> .start-stop {
 				width: 4em;
@@ -37,11 +37,11 @@ const TimerStyle = styled.div`
 				position: absolute;
 				bottom: 50%;
 				left: 50%;
-				transform: translate(-50%, 50%);
 				-ms-transform: translate(-50%, 50%);
 				-webkit-transform: translate(-50%, 50%);
 				-moz-transform: translate(-50%, 50%);
 				-o-transform: translate(-50%, 50%);
+				transform: translate(-50%, 50%);
 				border: 0;
 				border-radius: 5px;
 				background-color: sienna;
@@ -58,11 +58,11 @@ const TimerStyle = styled.div`
 				position: absolute;
 				bottom: 0;
 				left: 0;
-				transform: translateY(-10%);
 				-ms-transform: translateY(-10%);
 				-webkit-transform: translateY(-10%);
 				-moz-transform: translateY(-10%);
 				-o-transform: translateY(-10%);
+				transform: translateY(-10%);
 			}
 
 			> .white-button {
@@ -73,11 +73,11 @@ const TimerStyle = styled.div`
 				position: absolute;
 				top: 0;
 				left: 0;
-				transform: translateY(11%);
 				-ms-transform: translateY(11%);
 				-webkit-transform: translateY(11%);
 				-moz-transform: translateY(11%);
 				-o-transform: translateY(11%);
+				transform: translateY(11%);
 			}
 		}
 
@@ -94,11 +94,11 @@ const TimerStyle = styled.div`
 				position: absolute;
 				top: 10%;
 				left: 50%;
-				transform: translateX(-50%) rotate(180deg);
 				-ms-transform: translateX(-50%) rotate(180deg);
 				-webkit-transform: translateX(-50%) rotate(180deg);
 				-moz-transform: translateX(-50%) rotate(180deg);
 				-o-transform: translateX(-50%) rotate(180deg);
+				transform: translateX(-50%) rotate(180deg);
 				font-size: 3em;
 				text-align: center;
 				line-height: 2em;
@@ -124,11 +124,11 @@ const TimerStyle = styled.div`
 				position: absolute;
 				bottom: 10%;
 				left: 50%;
-				transform: translateX(-50%);
 				-ms-transform: translateX(-50%);
 				-webkit-transform: translateX(-50%);
 				-moz-transform: translateX(-50%);
 				-o-transform: translateX(-50%);
+				transform: translateX(-50%);
 
 				font-size: 3em;
 				text-align: center;
@@ -159,14 +159,22 @@ const Timer = (props) => {
 		props.counter <= 0 || props.secondCounter <= 0 ? blackButton.disabled = true : blackButton.disabled = false
 	}
 
+	const blackMinutes = parseInt(props.secondCounter / 60, 10).toString().padStart(2, '0')
+	const blackSeconds = parseInt(props.secondCounter % 60, 10).toString().padStart(2, '0')
+	const blackTenthSeconds = parseInt((props.secondCounter * 10) % 10).toString().padStart(2, '0')
+
+	const whiteMinutes = parseInt(props.counter / 60, 10).toString().padStart(2, '0')
+	const whiteSeconds = parseInt(props.counter % 60, 10).toString().padStart(2, '0')
+	const whiteTenthSeconds = parseInt((props.counter * 10) % 10).toString().padStart(2, '0')
+
   return (
     <TimerStyle>
       <div className="app">
           <div className="black-half">
-            {props.secondCounter <= 0 ? <div className="black-pieces black-pieces-lost">BLACK LOST</div> : <div className="black-pieces">BLACK {parseInt(props.secondCounter / 60, 10)}:{parseInt(props.secondCounter % 60, 10)}:{parseInt((props.secondCounter * 10) % 10)}</div>}
+            {props.secondCounter <= 0 ? <div className="black-pieces black-pieces-lost">BLACK LOST</div> : <div className="black-pieces">BLACK {blackMinutes}:{blackSeconds}:{blackTenthSeconds}</div>}
           </div>
           <div className="white-half">
-            {props.counter <= 0 ? <div className="white-pieces white-pieces-lost">WHITE LOST</div> : <div className="white-pieces">WHITE {parseInt(props.counter / 60, 10)}:{parseInt(props.counter % 60, 10)}:{parseInt((props.counter * 10) % 10)}</div>}
+            {props.counter <= 0 ? <div className="white-pieces white-pieces-lost">WHITE LOST</div> : <div className="white-pieces">WHITE {whiteMinutes}:{whiteSeconds}:{whiteTenthSeconds}</div>}
           </div>
           <div className="controls">
             {props.start ? <button className="start-stop" onClick={handleReset}>STOP</button> : <button className="start-stop" onClick={() => props.setStart(true)}>START</button>}
