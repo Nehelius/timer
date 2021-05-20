@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 
 const TimerStyle = styled.div`
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 90%;
 	margin: 0 auto;
 
 	.app {
-		width: 90vw;
-		height: 95vh;
+		width: 80%;
+		height: 80%;
 		position: absolute;
 		top: 50%;
 		left: 50%;

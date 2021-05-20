@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const SelectStyle = styled.div`
-  width: 100vw;
-  height: 30vh;
+  width: 100%;
+  height: 30%;
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -46,7 +46,7 @@ const SelectStyle = styled.div`
     position: absolute;
     bottom: 20%;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-60%)
   }
 `
 
