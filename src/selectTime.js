@@ -15,6 +15,7 @@ const SelectStyle = styled.div`
   }
 
   > button {
+    width: 5em;
     font-size: 1.5em;
     background: transparent;
     border: 5px solid white;
