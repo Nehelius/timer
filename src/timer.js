@@ -44,6 +44,8 @@ const TimerStyle = styled.div`
 				transform: translate(-50%, 50%);
 				border: 0;
 				border-radius: 5px;
+				margin: 0 auto;
+				text-align: center;
 				background-color: sienna;
 				color: white;
 				font-weight: 600;
