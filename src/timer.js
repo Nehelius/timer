@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const TimerStyle = styled.div`
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	margin: 0 auto;
 
 	.app {
@@ -123,6 +123,13 @@ const Timer = (props) => {
     props.setRunning(1)
   }
 
+	if (props.start) {
+		const whiteButton = document.querySelector('.white-button')
+		props.counter <= 0 || props.secondCounter <= 0 ? whiteButton.disabled = true : whiteButton.disabled = false
+		const blackButton = document.querySelector('.black-button')
+		props.counter <= 0 || props.secondCounter <= 0 ? blackButton.disabled = true : blackButton.disabled = false
+	}
+
   return (
     <TimerStyle>
       <div className="app">
@@ -134,7 +141,9 @@ const Timer = (props) => {
           </div>
           <div className="controls">
             {props.start ? <button className="start-stop" onClick={handleReset}>STOP</button> : <button className="start-stop" onClick={() => props.setStart(true)}>START</button>}
-            {props.running === 2 ? <button className="black-button" onClick={() => props.start ? props.setRunning(1) : null}></button> : <button className="white-button" onClick={() => props.start ? props.setRunning(2) : null}></button>}
+            {/* {props.running === 2 ? <button className="black-button" onClick={() => props.start ? props.setRunning(1) : null}></button> : <button className="white-button" onClick={() => props.start ? props.setRunning(2) : null}></button>} */}
+						<button className="black-button" onClick={() => props.start ? props.setRunning(1) : null}></button>
+						<button className="white-button" onClick={() => props.start ? props.setRunning(2) : null}></button>
           </div>
       </div>
     </TimerStyle>

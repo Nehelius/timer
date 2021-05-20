@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	html, body {
-		height: 100%;
+		height: 100vh;
 		background-color: sienna;
 		font-family: Arial, Helvetica, sans-serif;
 	}

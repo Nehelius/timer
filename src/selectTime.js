@@ -9,6 +9,11 @@ const SelectStyle = styled.div`
   align-items: baseline;
   flex-wrap: wrap;
 
+  > h1 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
   > button {
     font-size: 1.5em;
     background: transparent;
@@ -63,6 +68,7 @@ const SelectTime = (props) => {
 
   return (
     <SelectStyle>
+      <h1>A Simple Chess Clock</h1>
       <button className="time-button" value="10" onClick={setTime}>10 SEC</button>
       <button className="time-button" value="60" onClick={setTime}>1 MIN</button>
       <button className="time-button" value="180" onClick={setTime}>3 MIN</button>
