@@ -20,67 +20,55 @@ const TimerStyle = styled.div`
 		margin: 0 auto;
 		background-color: sienna;
 
-		> .controls {
-			width: 100%;
+		> .start-stop {
+			width: 4em;
+			height: 2em;
 			position: absolute;
-			top: 50%;
+			bottom: 50%;
 			left: 50%;
-			-ms-transform: translateX(-50%);
-			-webkit-transform: translateX(-50%);
-			-moz-transform: translateX(-50%);
-			-o-transform: translateX(-50%);
-			transform: translateX(-50%);
+			-ms-transform: translate(-50%, 50%);
+			-webkit-transform: translate(-50%, 50%);
+			-moz-transform: translate(-50%, 50%);
+			-o-transform: translate(-50%, 50%);
+			transform: translate(-50%, 50%);
+			border: 0;
+			border-radius: 5px;
+			margin: 0 auto;
+			text-align: center;
+			background-color: sienna;
+			color: white;
+			font-weight: 600;
+			font-size: 1.5em;
+		}
 
-			> .start-stop {
-				width: 4em;
-				height: 2em;
-				position: absolute;
-				bottom: 50%;
-				left: 50%;
-				-ms-transform: translate(-50%, 50%);
-				-webkit-transform: translate(-50%, 50%);
-				-moz-transform: translate(-50%, 50%);
-				-o-transform: translate(-50%, 50%);
-				transform: translate(-50%, 50%);
-				border: 0;
-				border-radius: 5px;
-				margin: 0 auto;
-				text-align: center;
-				background-color: sienna;
-				color: white;
-				font-weight: 600;
-				font-size: 1.5em;
-			}
+		> .black-button {
+			background-color: transparent;
+			border: 0;
+			width: 100%;
+			height: 37vh;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			-ms-transform: translateY(-10%);
+			-webkit-transform: translateY(-10%);
+			-moz-transform: translateY(-10%);
+			-o-transform: translateY(-10%);
+			transform: translateY(-10%);
+		}
 
-			> .black-button {
-				background-color: transparent;
-				border: 0;
-				width: 100%;
-				height: 37vh;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				-ms-transform: translateY(-10%);
-				-webkit-transform: translateY(-10%);
-				-moz-transform: translateY(-10%);
-				-o-transform: translateY(-10%);
-				transform: translateY(-10%);
-			}
-
-			> .white-button {
-				background-color: transparent;
-				border: 0;
-				width: 100%;
-				height: 37vh;
-				position: absolute;
-				top: 0;
-				left: 0;
-				-ms-transform: translateY(11%);
-				-webkit-transform: translateY(11%);
-				-moz-transform: translateY(11%);
-				-o-transform: translateY(11%);
-				transform: translateY(11%);
-			}
+		> .white-button {
+			background-color: transparent;
+			border: 0;
+			width: 100%;
+			height: 37vh;
+			position: absolute;
+			top: 0;
+			left: 0;
+			-ms-transform: translateY(11%);
+			-webkit-transform: translateY(11%);
+			-moz-transform: translateY(11%);
+			-o-transform: translateY(11%);
+			transform: translateY(11%);
 		}
 
 		> .black-half {
@@ -172,18 +160,15 @@ const Timer = (props) => {
   return (
     <TimerStyle>
       <div className="app">
-          <div className="black-half">
-            {props.secondCounter <= 0 ? <div className="black-pieces black-pieces-lost">BLACK LOST</div> : <div className="black-pieces">BLACK {blackMinutes}:{blackSeconds}:{blackTenthSeconds}</div>}
-          </div>
-          <div className="white-half">
-            {props.counter <= 0 ? <div className="white-pieces white-pieces-lost">WHITE LOST</div> : <div className="white-pieces">WHITE {whiteMinutes}:{whiteSeconds}:{whiteTenthSeconds}</div>}
-          </div>
-          <div className="controls">
-            {props.start ? <button className="start-stop" onClick={handleReset}>STOP</button> : <button className="start-stop" onClick={() => props.setStart(true)}>START</button>}
-            {/* {props.running === 2 ? <button className="black-button" onClick={() => props.start ? props.setRunning(1) : null}></button> : <button className="white-button" onClick={() => props.start ? props.setRunning(2) : null}></button>} */}
-						<button className="black-button" onClick={() => props.start ? props.setRunning(1) : null}></button>
-						<button className="white-button" onClick={() => props.start ? props.setRunning(2) : null}></button>
-          </div>
+				<div className="black-half">
+					{props.secondCounter <= 0 ? <div className="black-pieces black-pieces-lost">BLACK LOST</div> : <div className="black-pieces">BLACK {blackMinutes}:{blackSeconds}:{blackTenthSeconds}</div>}
+				</div>
+				<div className="white-half">
+					{props.counter <= 0 ? <div className="white-pieces white-pieces-lost">WHITE LOST</div> : <div className="white-pieces">WHITE {whiteMinutes}:{whiteSeconds}:{whiteTenthSeconds}</div>}
+				</div>
+				<button className="black-button" onClick={() => props.start ? props.setRunning(1) : null}></button>
+				<button className="white-button" onClick={() => props.start ? props.setRunning(2) : null}></button>
+				{props.start ? <button className="start-stop" onClick={handleReset}>STOP</button> : <button className="start-stop" onClick={() => props.setStart(true)}>START</button>}
       </div>
     </TimerStyle>
   )
