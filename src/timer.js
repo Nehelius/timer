@@ -150,9 +150,9 @@ const Timer = (props) => {
 		props.counter <= 0 || props.secondCounter <= 0 ? blackButton.disabled = true : blackButton.disabled = false
 	}
 
-	const blackMinutes = props.secondCounter > 0 ? parseInt(props.secondCounter / 60, 10).toString().padStart(2, '0') : "00"
-	const blackSeconds = props.secondCounter > 0 ? parseInt(props.secondCounter % 60, 10).toString().padStart(2, '0') : "00"
-	const blackTenthSeconds = props.secondCounter > 0 ? parseInt((props.secondCounter * 10) % 10).toString().padStart(2, '0') : "00"
+	const blackMinutes = props.secondCounter > 0.1 ? parseInt(props.secondCounter / 60, 10).toString().padStart(2, '0') : "00"
+	const blackSeconds = props.secondCounter > 0.1 ? parseInt(props.secondCounter % 60, 10).toString().padStart(2, '0') : "00"
+	const blackTenthSeconds = props.secondCounter > 0.1 ? parseInt((props.secondCounter * 10) % 10).toString().padStart(2, '0') : "00"
 
 	const whiteMinutes = props.counter > 0.1 ? parseInt(props.counter / 60, 10).toString().padStart(2, '0') : "00"
 	const whiteSeconds = props.counter > 0.1 ? parseInt(props.counter % 60, 10).toString().padStart(2, '0') : "00"
